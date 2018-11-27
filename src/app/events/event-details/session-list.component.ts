@@ -14,10 +14,10 @@ export class SessionListComponent {
     @Input() sortBy: string;
     visibleSessions: ISession[] = [];
 
-    constructor(private auth: AuthService, private voterService: VoterService) {
+    constructor(public auth: AuthService, private voterService: VoterService) {
 
     }
-    
+
     ngOnChanges() {
         if(this.sessions) {
             this.filterSessions(this.filterBy);
