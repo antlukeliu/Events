@@ -11,7 +11,9 @@ import {
   EventListResolver,
   CreateSessionComponent,
   SessionListComponent,
-  DurationPipe
+  DurationPipe,
+  UpvoteComponent,
+  VoterService
 } from './events/index'
 import { TOASTR_TOKEN, Toastr, 
   JQ_TOKEN, 
@@ -49,6 +51,7 @@ let jQuery = window['$'];
     SessionListComponent,
     CollapsibleWellComponent,
     DurationPipe,
+    UpvoteComponent,
     SimpleModalComponent,
     ModalTriggerDirective
   ],
@@ -59,7 +62,8 @@ let jQuery = window['$'];
     EventRouteActivator,
     EventListResolver,
     AuthService,
-    { provide: 'canDeactivateCreateEvent' , useValue: checkDirtyState }
+    { provide: 'canDeactivateCreateEvent' , useValue: checkDirtyState },
+    VoterService
   ],
   bootstrap: [EventsAppComponent]
 })
