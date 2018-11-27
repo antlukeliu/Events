@@ -13,7 +13,10 @@ import {
   SessionListComponent,
   DurationPipe
 } from './events/index'
-import { TOASTR_TOKEN, Toastr, JQ_TOKEN, CollapsibleWellComponent } from './common/index';
+import { TOASTR_TOKEN, Toastr, 
+  JQ_TOKEN, 
+  CollapsibleWellComponent,
+  SimpleModalComponent } from './common/index';
 import { EventsAppComponent } from './events-app.component';
 import { NavBarComponent } from './nav/navbar.component';
 import { RouterModule } from '@angular/router';
@@ -44,11 +47,13 @@ let jQuery = window['$'];
     CreateSessionComponent,
     SessionListComponent,
     CollapsibleWellComponent,
-    DurationPipe
+    DurationPipe,
+    SimpleModalComponent
   ],
   providers: [
     EventService,
     { provide: TOASTR_TOKEN, useValue: toastr },
+    { provide: JQ_TOKEN, useValue: jQuery },
     EventRouteActivator,
     EventListResolver,
     AuthService,
